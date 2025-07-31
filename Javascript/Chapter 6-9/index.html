@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="ch6_9.js"></script>
+</head>
+<body>
+    <pre id="output"></pre>
+
+<script>
+let a = 10;
+let output = document.getElementById('output');
+
+function displayResult(message, value) {
+  output.innerHTML += message + value + "\n";
+}
+
+displayResult("The value of a is: ", a);
+output.innerHTML += "..........................................\n";
+
+// Pre-increment
+let preIncrementValue = ++a;
+displayResult("The value of ++a is: ", preIncrementValue);
+displayResult("Now the value of a is: ", a);
+
+// Post-increment
+let postIncrementValue = a++;
+displayResult("The value of a++ is: ", postIncrementValue);
+displayResult("Now the value of a is: ", a);
+
+// Pre-decrement
+let preDecrementValue = --a;
+displayResult("The value of --a is: ", preDecrementValue);
+displayResult("Now the value of a is: ", a);
+
+// Post-decrement
+let postDecrementValue = a--;
+displayResult("The value of a-- is: ", postDecrementValue);
+displayResult("Now the value of a is: ", a);
+</script>
+
+a will be 1 <br>
+b will be 1<br>
+Result will be 3<br>
+
+<style>
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 8px;
+    text-align: left;
+  }
+</style>
+</head>
+<body>
+
+<h1>Subject Marks Calculation</h1>
+
+<script>
+  // a) Take three subjects name from user and store them in 3 different variables.
+  const subject1 = prompt("Enter the name of Subject 1:");
+  const subject2 = prompt("Enter the name of Subject 2:");
+  const subject3 = prompt("Enter the name of Subject 3:");
+
+  // b) Total marks for each subject is 100, store it in another variable.
+  const totalMarksPerSubject = 100;
+
+  // c) Take obtained marks for first subject from user and stored it in different variable.
+  const obtainedMarks1 = parseInt(prompt(`Enter obtained marks for ${subject1}:`));
+
+  // d) Take obtained marks for remaining 2 subjects from user and store them in variables.
+  const obtainedMarks2 = parseInt(prompt(`Enter obtained marks for ${subject2}:`));
+  const obtainedMarks3 = parseInt(prompt(`Enter obtained marks for ${subject3}:`));
+
+  // e) Now calculate total marks and percentage and show the result in browser like this. (Hint: user table)
+
+  // Calculate percentages
+  const percentage1 = (obtainedMarks1 / totalMarksPerSubject) * 100;
+  const percentage2 = (obtainedMarks2 / totalMarksPerSubject) * 100;
+  const percentage3 = (obtainedMarks3 / totalMarksPerSubject) * 100;
+
+  // Calculate overall total marks and percentage
+  const overallTotalMarks = totalMarksPerSubject * 3;
+  const overallObtainedMarks = obtainedMarks1 + obtainedMarks2 + obtainedMarks3;
+  const overallPercentage = (overallObtainedMarks / overallTotalMarks) * 100;
+
+  // Display results in a table
+  document.write("<table>");
+  document.write("<tr><th>Subject</th><th>Total Marks</th><th>Obtained Marks</th><th>Percentage</th></tr>");
+  document.write(`<tr><td>${subject1}</td><td>${totalMarksPerSubject}</td><td>${obtainedMarks1}</td><td>${percentage1.toFixed(2)}%</td></tr>`);
+  document.write(`<tr><td>${subject2}</td><td>${totalMarksPerSubject}</td><td>${obtainedMarks2}</td><td>${percentage2.toFixed(2)}%</td></tr>`);
+  document.write(`<tr><td>${subject3}</td><td>${totalMarksPerSubject}</td><td>${obtainedMarks3}</td><td>${percentage3.toFixed(2)}%</td></tr>`);
+  document.write(`<tr><td><b>Total</b></td><td><b>${overallTotalMarks}</b></td><td><b>${overallObtainedMarks}</b></td><td><b>${overallPercentage.toFixed(2)}%</b></td></tr>`);
+  document.write("</table>");
+</script>
+
+</body>
+</html>
